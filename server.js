@@ -17,8 +17,8 @@ const { Character, Location, Episode } = require('./graphql/sources')
 const handle = require('./handlers')
 const routes = require('./routes')
 
-const LOCAL = `mongodb://localhost:27017/rickmorty${process.env.NODE_ENV === 'test' ? '-test' : ''}`
-const db = process.env.NODE_ENV === 'production' ? process.env.DATABASE : LOCAL
+// const LOCAL = `mongodb://localhost:27017/rickmorty${process.env.NODE_ENV === 'test' ? '-test' : ''}`
+const db = process.env.MONGODB_URI
 
 const server = new ApolloServer({
   typeDefs,

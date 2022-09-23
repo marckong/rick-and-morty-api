@@ -12,7 +12,8 @@
     "test": "nyc --check-coverage --lines 95 mocha --exit && nyc report --reporter=lcov",
     "test:watch": "nodemon --ext js ./test --exec 'mocha --reporter min'",
     "test:mock": "mongorestore --host=localhost:27017 --db=rickmorty-test --drop ./test/data",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "vercel": "vercel"
   },
   "author": "Axel Fuhrmann",
   "license": "BSD-3-Clause",
@@ -27,7 +28,8 @@
     "graphql-depth-limit": "^1.1.0",
     "mongoose": "^5.12.5",
     "mongoose-mongodb-errors": "0.0.2",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "vercel": "^28.4.2"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
