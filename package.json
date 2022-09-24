@@ -2,13 +2,13 @@
   "name": "rick-morty-api",
   "version": "1.0.0",
   "description": "Rick and Morty API",
-  "main": "server.js",
+  "main": "index.js",
   "engines": {
-    "node": ">= 7.10.1"
+    "node": ">= 16.14.2"
   },
   "scripts": {
-    "start": "node ./server.js",
-    "dev": "nodemon ./server.js",
+    "start": "node ./index.js",
+    "dev": "nodemon ./index.js",
     "test": "nyc --check-coverage --lines 95 mocha --exit && nyc report --reporter=lcov",
     "test:watch": "nodemon --ext js ./test --exec 'mocha --reporter min'",
     "test:mock": "mongorestore --host=localhost:27017 --db=rickmorty-test --drop ./test/data",
