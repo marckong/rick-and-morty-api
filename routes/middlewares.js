@@ -6,6 +6,7 @@ const { baseUrl, message, collection } = require('../utils/helpers')
 const sanitizeQueryParams = (model) => query(collection.queries[model]).trim()
 
 const generatePageUrls = (req, res, next) => {
+  console.log('req.payload', req.payload)
   const { results, count, page } = req.payload
   const pages = Math.ceil(count / collection.limit)
 

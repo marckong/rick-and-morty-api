@@ -5,15 +5,18 @@ const { collection } = require('../utils/helpers')
 
 const { Schema } = mongoose
 
-const episodeSchema = new Schema({
-  id: Number,
-  name: String,
-  episode: String,
-  air_date: String,
-  characters: [String],
-  url: String,
-  created: Date,
-})
+const episodeSchema = new Schema(
+  {
+    id: Number,
+    name: String,
+    episode: String,
+    air_date: String,
+    characters: [String],
+    url: String,
+    created: Date,
+  },
+  { collection: 'Episode' },
+)
 
 episodeSchema.statics.structure = (res) => {
   const sortSchema = ({ id, name, air_date, episode, characters, url, created }) => ({

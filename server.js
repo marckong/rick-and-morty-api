@@ -17,7 +17,6 @@ const { Character, Location, Episode } = require('./graphql/sources')
 const handle = require('./handlers')
 const routes = require('./routes')
 
-// const LOCAL = `mongodb://localhost:27017/rickmorty${process.env.NODE_ENV === 'test' ? '-test' : ''}`
 const db = process.env.MONGODB_URI
 
 const server = new ApolloServer({
@@ -64,7 +63,7 @@ server.applyMiddleware({ app })
 app.use(handle.error.notFound)
 app.use(handle.error.productionErrors)
 
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 8081
 app.listen(PORT, () =>
   console.log(
     '\x1b[34m%s\x1b[0m',

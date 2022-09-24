@@ -5,15 +5,18 @@ const { collection } = require('../utils/helpers')
 
 const { Schema } = mongoose
 
-const locationSchema = new Schema({
-  id: Number,
-  name: String,
-  type: String,
-  dimension: String,
-  residents: [String],
-  url: String,
-  created: Date,
-})
+const locationSchema = new Schema(
+  {
+    id: Number,
+    name: String,
+    type: String,
+    dimension: String,
+    residents: [String],
+    url: String,
+    created: Date,
+  },
+  { collection: 'Location' },
+)
 
 locationSchema.statics.structure = (res) => {
   const sortSchema = ({ id, name, type, dimension, residents, url, created }) => ({

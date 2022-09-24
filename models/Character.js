@@ -5,20 +5,29 @@ const { collection } = require('../utils/helpers')
 
 const { Schema } = mongoose
 
-const characterSchema = new Schema({
-  id: Number,
-  name: String,
-  species: String,
-  type: String,
-  status: String,
-  location: { type: Schema.ObjectId, ref: 'Location' },
-  origin: { type: Schema.ObjectId, ref: 'Location' },
-  gender: String,
-  episode: [String],
-  image: String,
-  url: String,
-  created: Date,
-})
+const characterSchema = new Schema(
+  {
+    id: Number,
+    name: String,
+    species: String,
+    type: String,
+    status: String,
+    location: {
+      name: String,
+      url: String,
+    },
+    origin: {
+      name: String,
+      url: String,
+    },
+    gender: String,
+    episode: [String],
+    image: String,
+    url: String,
+    created: Date,
+  },
+  { collection: 'Character' },
+)
 
 function autopopulate(next) {
   this.populate({ path: 'location', select: 'name url -_id' })
